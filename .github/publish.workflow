@@ -1,8 +1,6 @@
 workflow "Publish master to gh-pages" {
-  resolves = [
-    "publish-hugo-site",
-  ]
   on = "push"
+  resolves = ["Publish to gh-pages branch"]
 }
 
 action "Filter branch" {
@@ -10,7 +8,7 @@ action "Filter branch" {
   args = "branch master"
 }
 
-action "publish-hugo-site" {
+action "Publish to gh-pages branch" {
   uses = "pinkkis/page-publisher@master"
   env = {
     TARGET_REPO = "pinkkis/poisonvial.com"
