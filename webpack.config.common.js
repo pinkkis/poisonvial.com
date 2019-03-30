@@ -39,7 +39,7 @@ module.exports = {
 				to: './static/',
 			},
 		]),
-		...generateHTMLPlugins(),
+		...generateHTMLPlugins()
 	],
 	stats: {
 		colors: true,
